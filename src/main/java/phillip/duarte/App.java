@@ -1,10 +1,11 @@
 package phillip.duarte;
 
-public final class App {
-    private App() {
-    }
+import java.io.IOException;
+import java.text.ParseException;
 
-    public static void main(String[] args) {
-        System.out.println("New Commit");
+public final class App {
+    public static void main(String[] args) throws IOException, org.json.simple.parser.ParseException, ParseException {
+        JSONConverter converter = new JSONConverter("src/main/java/phillip/duarte/stock.json", "statement.html");
+        converter.convertJSONtoHTML();
     }
 }
